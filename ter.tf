@@ -102,7 +102,7 @@ resource "aws_security_group" "allow_tls" {
 
 resource "aws_key_pair" "deployer" {
   key_name = "deployer-key"
-  public_key = file("/home/ec2-user/.ssh/id_rsa.pub")
+  public_key = file("/Users/herabakirova/.ssh/id_rsa.pub")
 }
 
 data "aws_ami" "ubuntu" {

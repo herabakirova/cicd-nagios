@@ -90,6 +90,6 @@ variable ec2_name {
 
 variable userdata {
   type        = string
-  default     = "/home/ec2-user/terraform-aws-project3/script.sh"
+  default     = "/Users/herabakirova/Desktop/jenkins/heraproject/script.sh"
   description = "provide the path to the script"
 }
