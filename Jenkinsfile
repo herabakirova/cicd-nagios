@@ -27,7 +27,7 @@ spec:
         '''
     }
     withCredentials([
-        usernamePassword(credentialsId: 'aws-creds', passwordVariable: 'AWS_SECRET_ACCESS_KEY ', usernameVariable: 'AWS_ACCESS_KEY_ID')
+        usernamePassword(credentialsId: 'aws-creds', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')
         ]) {
     stage ("AWS") {
         sh '''
