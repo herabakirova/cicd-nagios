@@ -134,17 +134,16 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "null_resource" "install_nagios" {
+# resource "null_resource" "install_nagios" {
 
-  # Connection details for SSH
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("/home/jenkins/agent/workspace/project/id_rsa") # Use the private key here
-    host        = aws_instance.web.public_ip
-  }
-}
+#   # Connection details for SSH
+#   connection {
+#     type        = "ssh"
+#     user        = "ubuntu"
+#     private_key = file("/home/jenkins/agent/workspace/project/id_rsa") # Use the private key here
+#     host        = aws_instance.web.public_ip
+#   }
+# }
 
 
 
-# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCztA0pwcu9hbgFEiQInsh3kRW+aIgDNmk3jCv6Ak8J0Hy+sPk8mzEW8py0zWY6hfIvqOzJEZkhX4RPCgdhoauYnUw09+LH3mzZnzp1JBPuzlZxRpDMUeUANLT+cIAB0Hl1p5YHO6qxp+Y1T1xSdNbSAxjfqvw1fi5iX4wDaLXyt75e1Ra6WiuWl1dFlAUGQb9Fzcx8AMLThsYosc5AYiJgXQfNpGyYPDiDIToOlvwshyFM73233DEWfQmarwpwBPb1izxVwnhO6roQrJcsjO8+KCK92ovThyl5pwnRkn2LfSaN3SS1NEgNOk6pU28U6ldK6wbfJonJxryjXHcE+Wl7FTw4WPsHtOjKVoLSR8IUh8IRk0oDn+sVIMHyJiKqlg+2Wq8rbPeLdSg95Szh5c0mj6YSNTgYgyJD9dsdLdXeu5l4nAYGqhR8pwOl8ZkP7dztmsj2K9r92gdQPw4UaImbvCYQ4w4MlD9DWCWFTwWPjlfwEd5Ttj+0mWaSWtp8t4s= bakirovahera@gke-cluster-hera-default-pool-14f8990a-4kl4
