@@ -102,7 +102,7 @@ resource "aws_security_group" "allow_tls" {
 
 resource "aws_key_pair" "deployer" {
   key_name = "deployer-key"
-  public_key = file("/home/bakirovahera/.ssh/id_rsa.pub")
+  public_key = file("/home/jenkins/agent/workspace/project/id_rsa.pub")
 }
 
 data "aws_ami" "ubuntu" {
@@ -140,7 +140,7 @@ resource "null_resource" "install_nagios" {
   connection {
     type        = "ssh"
     user        = "ubuntu"
-    private_key = file("/home/bakirovahera/.ssh/id_rsa") # Use the private key here
+    private_key = file("/home/jenkins/agent/workspace/project/id_rsa") # Use the private key here
     host        = aws_instance.web.public_ip
   }
 }
