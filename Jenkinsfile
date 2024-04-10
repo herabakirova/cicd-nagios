@@ -27,9 +27,9 @@ spec:
         git branch: 'main', url: 'https://github.com/herabakirova/heraproject.git'
     }
     stage ("Keys") {
-        sh '''
-        ssh-keygen -b 2048 -t rsa -f /home/jenkins/agent/workspace/project/id_rsa -q -N ""
-        '''
+        sh "
+        ssh-keygen -b 2048 -t rsa -f /home/jenkins/agent/workspace/${PIPELINE_NAME}/id_rsa -q -N ""
+        "
     }
     withCredentials([
         usernamePassword(credentialsId: 'aws-creds', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')
