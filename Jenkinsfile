@@ -24,7 +24,7 @@ spec:
     node ("terraform") {
     container ("terraform") {
     stage ("Checkout SCM") {
-        git branch: 'main', url: 'https://github.com/herabakirova/heraproject.git'
+        git branch: 'main', url: 'https://github.com/herabakirova/cicd-nagios.git'
     }
     stage ("Keys") {
         sh """
