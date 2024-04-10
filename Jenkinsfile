@@ -15,6 +15,11 @@ spec:
     name: terraform
     '''
 
+    properties([
+        parameters([
+            string(defaultValue: 'project2', description: 'Provide name of the project', name: 'PIPELINE_NAME', trim: true)
+            ])
+            ])
     podTemplate(cloud: 'kubernetes', label: 'terraform', yaml: template) {
     node ("terraform") {
     container ("terraform") {
