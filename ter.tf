@@ -102,7 +102,7 @@ resource "aws_security_group" "allow_tls" {
 
 resource "aws_key_pair" "deployer" {
   key_name = "deployer-key"
-  public_key = file("/Users/herabakirova/.ssh/id_rsa.pub")
+  public_key = file("/home/bakirovahera/.ssh/id_rsa.pub")
 }
 
 data "aws_ami" "ubuntu" {
@@ -140,7 +140,11 @@ resource "null_resource" "install_nagios" {
   connection {
     type        = "ssh"
     user        = "ubuntu"
-    private_key = file("~/.ssh/id_rsa") # Use the private key here
+    private_key = file("/home/bakirovahera/.ssh/id_rsa") # Use the private key here
     host        = aws_instance.web.public_ip
   }
 }
+
+
+
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCztA0pwcu9hbgFEiQInsh3kRW+aIgDNmk3jCv6Ak8J0Hy+sPk8mzEW8py0zWY6hfIvqOzJEZkhX4RPCgdhoauYnUw09+LH3mzZnzp1JBPuzlZxRpDMUeUANLT+cIAB0Hl1p5YHO6qxp+Y1T1xSdNbSAxjfqvw1fi5iX4wDaLXyt75e1Ra6WiuWl1dFlAUGQb9Fzcx8AMLThsYosc5AYiJgXQfNpGyYPDiDIToOlvwshyFM73233DEWfQmarwpwBPb1izxVwnhO6roQrJcsjO8+KCK92ovThyl5pwnRkn2LfSaN3SS1NEgNOk6pU28U6ldK6wbfJonJxryjXHcE+Wl7FTw4WPsHtOjKVoLSR8IUh8IRk0oDn+sVIMHyJiKqlg+2Wq8rbPeLdSg95Szh5c0mj6YSNTgYgyJD9dsdLdXeu5l4nAYGqhR8pwOl8ZkP7dztmsj2K9r92gdQPw4UaImbvCYQ4w4MlD9DWCWFTwWPjlfwEd5Ttj+0mWaSWtp8t4s= bakirovahera@gke-cluster-hera-default-pool-14f8990a-4kl4

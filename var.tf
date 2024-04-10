@@ -90,6 +90,6 @@ variable ec2_name {
 
 variable userdata {
   type        = string
-  default     = "/Users/herabakirova/Desktop/jenkins/heraproject/script.sh"
+  default     = "/home/bakirovahera/script.sh"
   description = "provide the path to the script"
 }
